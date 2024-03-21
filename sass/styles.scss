@@ -1,0 +1,117 @@
+@import "variables";
+@import "mixins";
+@import "functions";
+body {
+    height: 100vh;
+    width: 100vw;
+    @include zeroborderbox;
+}
+
+#container {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    @include zeroborderbox;
+    @include containerflex;
+    @include horizontalflex;
+
+    > aside {
+        padding: 8px;
+        padding-top: 56px;
+
+        >img {
+            width: 150px;
+            height: auto;
+            padding: 25px 12px 16px;
+            padding-left: 5px;
+            margin: 0px 0px 19px;
+        }
+
+        ul {
+            list-style: none;
+            color: $color_font;
+            @include zeroborderbox;
+            @include containerflex;
+            @include verticalflex;
+            gap: doubleSize(8px);
+
+            li {
+                @include stylesMenu;
+                gap: 8px;
+                cursor: pointer;
+
+                > img {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    > section {
+        flex-grow: 2;
+
+        > div:nth-child(1) {
+            @include containerflex;
+            @include horizontalflex;
+
+            > div:nth-child(1){
+                >img {
+                    height: 200px;
+                    width: 200px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    
+                }
+            }
+
+            > div:nth-child(2) {
+                flex-grow: 2
+            }
+
+            > div:nth-child(2){
+                color: $color-font;
+                @include containerflex;
+                @include horizontalflex;
+                
+                align-items: baseline;
+                gap: 20px;
+            }
+
+            >div:nth-child(2) {
+                > h1 {
+                    cursor: pointer;
+                }
+
+                > button {
+                    height: 32px;
+                    width: auto;
+                    border-radius: 15%;
+                    cursor: pointer;
+                }
+
+                > i {
+                    cursor: pointer;
+                }
+
+            > div:nth-child(3) {
+                color: $color-font;
+                
+                align-items: baseline;
+                gap: 20px;
+            }
+        }
+
+        }
+        > div:nth-child(2) {
+            background-color: yellow;
+            height: 25px;
+        }
+        > div:nth-child(3) {
+            background-color: blue;
+            height: 25px;
+        }
+    }
+}
